@@ -1,5 +1,4 @@
-mkdir -p .github/workflows
-cat << EOF > .github/workflows/verify.yml
+
 name: verify
 on: [push]
 jobs:

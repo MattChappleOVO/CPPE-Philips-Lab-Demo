@@ -1,9 +1,20 @@
 name: verify
-on: [push]
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+    
+  workflow_dispatch:
+
 jobs:
   cowsay:
+    
     runs-on: self-hosted
+    
     container: npalm/cowsay
+    
     steps:
       - uses: actions/checkout@v2
-      - run: cowsay -f ghostbusters "  Who ya gonna call?"
+      - run: cowsay -f ghostbusters "  Who ya gonna call? Team CPPE!"
